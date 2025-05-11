@@ -8,6 +8,7 @@ import {
   StatusBar,
 } from 'react-native';
 import {useTheme, AppColors} from '../context/ThemeContext';
+import NewsBlogSection from '../components/NewsBlogSection';
 
 const HomeScreen = () => {
   const {isDarkMode, colors} = useTheme();
@@ -24,6 +25,12 @@ const HomeScreen = () => {
         <View style={styles.header}>
           <Text style={styles.title}>3D Shikshan</Text>
           <Text style={[styles.subtitle, {color: colors.text}]}>Welcome to 3D Learning</Text>
+        </View>
+        
+        {/* News and Blogs Section */}
+        <View style={styles.newsBlogContainer}>
+          <Text style={[styles.sectionTitle, {color: colors.text}]}>Latest Updates</Text>
+          <NewsBlogSection />
         </View>
         
         <View style={styles.section}>
@@ -71,6 +78,9 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
   },
+  newsBlogContainer: {
+    marginBottom: 20,
+  },
   section: {
     padding: 15,
     marginBottom: 10,
@@ -79,10 +89,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 15,
+    paddingHorizontal: 15,
   },
   courseContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingHorizontal: 15,
   },
   courseCard: {
     width: '48%',
@@ -102,6 +114,7 @@ const styles = StyleSheet.create({
   },
   featuredContainer: {
     marginTop: 10,
+    paddingHorizontal: 15,
   },
   featuredItem: {
     width: '100%',
